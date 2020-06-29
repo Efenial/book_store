@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h3>Войти в библиотеку</h3>
+<form method="post" class="formsWidth">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Войти</button>
+</form>
+Создать новую учетную запись: <a href="{% url 'signup' %}">Зарегистрируйтесь здесь</a> <br>
+Забыли свой пароль? <a href="{% url 'resetPassword' %}">Сброс пароля</a>
+{% endblock content %}
